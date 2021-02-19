@@ -1,0 +1,21 @@
+将该文档完全更改为markdown文档
+项目运行后端需要修改：
+①.mailserver下的application.properties文件加入自己的rabbitmq,redis,mysql相关配置
+②.vhr-web下的application.yml文件加入自己的rabbitmq,redis,mysql相关配置
+③.在pom.xml(mailserver下)添加mysql依赖和test依赖，确保mailserver模块可以正常运行(若不考虑邮件发送的情况
+   该项和项目运行无关)
+④.启动时启动vhr-web模块
+pom中引入的依赖
+```
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+        <!--@Test依赖-->
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>RELEASE</version>
+            <scope>test</scope>
+        </dependency>
+```
